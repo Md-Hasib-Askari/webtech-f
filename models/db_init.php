@@ -5,7 +5,7 @@ class DBInit
     private $host = 'localhost';
     private $user = 'root';
     private $pass = '';
-    private $db = 'emp_db';
+    private $db = 'empdb';
     private $conn;
 
     public function __construct()
@@ -21,9 +21,11 @@ class DBInit
         return $this->conn;
     }
 
-    public function __destruct()
+    public function closeConn()
     {
-        $this->conn->close();
+        return $this->conn->close();;
     }
+
+ 
 
 }

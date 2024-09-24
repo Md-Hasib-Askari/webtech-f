@@ -8,12 +8,15 @@
 </head>
 <body>
     <?php include '../routes/nav.php'; ?>
+    <?php require '../controllers/emp_login.php'; ?>
     <h1>Employee Login</h1>
     <hr>
     <form action="../controllers/emp_login.php" method="post">
         <input type="text" name="emp_id" placeholder="Employee ID">
+        
         <input type="password" name="emp_pass" placeholder="Password">
-        <input type="submit" value="Login">
+        
+        <input type="submit" name = "submit" value="Login">
     </form>
     <?php
         if(isset($_GET['error'])){

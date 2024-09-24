@@ -21,7 +21,7 @@ function validateForm() {
 
     
     if (empPass.length < 8) {
-        errorMessage.innerHTML = "Password must be at least 6 characters long!";
+        errorMessage.innerHTML = "Password must be at least 8 characters long!";
         return false;  
     }
 

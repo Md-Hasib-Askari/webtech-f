@@ -11,7 +11,7 @@ class LeaveApplication {
     }
 
     public function insertApplication($emp_id, $emp_name, $leave_type, $start_date, $end_date, $reason) {
-        $sql = "INSERT INTO leave_applications (emp_id, emp_name, leave_type, start_date, end_date, reason, status) VALUES ('$emp_id', '$emp_name', '$thisleave_type', '$start_date', '$end_date', '$reason', 'pending')";
+        $sql = "INSERT INTO leave_applications (emp_id, emp_name, leave_type, start_date, end_date, reason, status) VALUES ('$emp_id', '$emp_name', '$ leave_type', '$start_date', '$end_date', '$reason', 'pending')";
         $res = $this->conn->query($sql);
         if ($res === TRUE) {
             echo "New record created successfully";
