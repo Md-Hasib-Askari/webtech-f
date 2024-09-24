@@ -1,3 +1,7 @@
+<?php
+    require_once '../controllers/leave_dashboard.php';
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,29 +16,41 @@
     <hr>
     <table>
         <tr>
+            <th>Employee ID</th>
             <th>Employee Name</th>
             <th>Leave Type</th>
             <th>Start Date</th>
             <th>End Date</th>
+            <th>Reason</th>
             <th>Status</th>
-            <th>Actions</th>
+            <th>Action</th>
         </tr>
-        <tr>
-            <td>John Doe</td>
-            <td>Casual Leave</td>
-            <td>2021-01-01</td>
-            <td>2021-01-02</td>
-            <td>Pending</td>
-            <td>Family Function</td>
-        </tr>
-        <tr>
-            <td>Jane Doe</td>
-            <td>Sick Leave</td>
-            <td>2021-01-03</td>
-            <td>2021-01-04</td>
-            <td>Approved</td>
-            <td>Fever</td>
-        </tr>
+        <?php foreach ($apps as $app) { ?>
+            <tr>
+                <td><?php echo $app['emp_id']; ?></td>
+                <td><?php echo $app['emp_name']; ?></td>
+                <td><?php echo $app['leave_type']; ?></td>
+                <td><?php echo $app['start_date']; ?></td>
+                <td><?php echo $app['end_date']; ?></td>
+                <td><?php echo $app['reason']; ?></td>
+                <td><?php echo $app['status']; ?></td>
+                <td>
+                    <div class="action">
+                        <?php if ($app['status'] == 'pending') { ?>
+                            <button id="approve" onclick="setApprove(<?php echo $app['emp_id']; ?>);">Approve</button>
+                            <button id="reject" onclick="setReject(<?php echo $app['emp_id']; ?>);">Reject</button>
+                        <?php } else { ?>
+                            <button id="view" onclick="viewDetails(<?php echo $app['emp_id']; ?>);">View Details</button>
+                        <?php } ?>
+                    </div>
+                </td>
+            </tr>
+        <?php } ?>
     </table>
+
+    <div id="details"></div>
+
+    <?php include '../routes/footer.php'; ?>
+    <script src="../static/js/leave_dashboard.js"></script>
 </body>
 </html>

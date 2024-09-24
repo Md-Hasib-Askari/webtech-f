@@ -1,3 +1,26 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+nav {
+    background-color: #333;
+    overflow: hidden;
+}
+ul {
+    list-style-type: none;
+    display: flex;
+    justify-content: space-around;
+}
+li {
+    padding: 10px;
+}
+li:hover {
+    background-color: #555;
+}
+a {
+    text-decoration: none;
+    color: white;
+}
 h1 {
     margin-top: 50px;
     text-align: center;
@@ -13,6 +36,7 @@ form {
     width: 30%;
     margin: 0 auto;
     margin-top: 50px;
+    margin-bottom: 50px;
     border: 1px solid #333;
     padding: 50px;
     border-radius: 5px;
@@ -55,4 +79,45 @@ th {
 }
 tr:nth-child(even) {
     background-color: #f2f2f2;
+}
+#error_message {
+    color: red;
+    text-align: center;
+    margin-top: 10px;
+}
+#success_message {
+    color: green;
+    text-align: center;
+    margin-top: 10px;
+}
+.action {
+    display: flex;
+    justify-content: space-around;
+    gap: 10px;
+}
+.action button {
+    padding: 8px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    background: none;
+    color: #fff;
+}
+#approve {
+    background: green;
+}
+#reject {
+    background: red;
+}
+#view {
+    color: #333;
+    background: yellow;
+}
+#details {
+    margin-top: 20px;
+    margin-bottom: 50px;
+    display: flex;
+    justify-content: space-around;
+    gap: 10px;
+    flex-direction: column;
 }
