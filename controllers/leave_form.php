@@ -1,5 +1,5 @@
 <?php
-include '../model/mydb.php';
+include '../model/db_init.php';
 
 $empId = "";
 $empName = "";
@@ -41,8 +41,8 @@ if (isset($_POST["Submit"])) {
         $error = 1;
     }
 
-    if ($hasError == 0) {
-        $mydb = new mydb();
+    if ($error == 0) {
+        
         $conn = $mydb->createConObject();  
         $table = "";  //needs to be filled
 
