@@ -63,7 +63,7 @@
             echo $_GET['error'];
         }
     ?>
-
+    <script src="../js/validation.js"></script>
     <?php include '../routes/footer.php'; ?>
 </body>
 </html>
