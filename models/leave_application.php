@@ -1,6 +1,6 @@
 <?php
 
-include 'db_init.php';
+include_once 'db_init.php';
 
 class LeaveApplication {
     private $conn;
@@ -11,7 +11,9 @@ class LeaveApplication {
     }
 
     public function insertApplication($emp_id, $emp_name, $leave_type, $start_date, $end_date, $reason) {
-        $sql = "INSERT INTO leave_applications (emp_id, emp_name, leave_type, start_date, end_date, reason, status) VALUES ('$emp_id', '$emp_name', '$ leave_type', '$start_date', '$end_date', '$reason', 'pending')";
+        // Notice: Remove extra space in '$leave_type'
+        $sql = "INSERT INTO leave_applications (emp_id, emp_name, leave_type, start_date, end_date, reason, status) 
+                VALUES ('$emp_id', '$emp_name', '$leave_type', '$start_date', '$end_date', '$reason', 'pending')";
         $res = $this->conn->query($sql);
         if ($res === TRUE) {
             echo "New record created successfully";
@@ -25,8 +27,8 @@ class LeaveApplication {
         $res = $this->conn->query($sql);
         if ($res->num_rows > 0) {
             $rows = [];
-            while($row = $res->fetch_assoc()) {
-                $rows.push($row);
+            while ($row = $res->fetch_assoc()) {
+                $rows[] = $row;  // Replaces 'push' with PHP syntax
             }
             return $rows;
         } else {
