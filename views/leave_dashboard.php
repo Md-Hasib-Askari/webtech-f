@@ -4,36 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Leave Application Dashboard</title>
-    <style>
-        body {
-            padding-bottom: 30px;
-        }
-        h1 {
-            margin-top: 10px;
-            text-align: center;
-        }
-        hr {
-            width: 30%;
-            margin: 0 auto;
-            margin-top: 10px;
-        }
-        table {
-            width: 80%;
-            margin: 0 auto;
-            margin-top: 30px;
-            border-collapse: collapse;
-        }
-        th, td {
-            border: 1px solid #333;
-            padding: 10px;
-        }
-        th {
-            background-color: rgb(230, 230, 230);
-        }
-        tr:nth-child(even) {
-            background-color: #f2f2f2;
-        }
-    </style>
+    <link rel="stylesheet" href="../static/css/style.css">
 </head>
 <body>
     <?php include '../routes/nav.php'; ?>
