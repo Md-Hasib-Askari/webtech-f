@@ -1,5 +1,6 @@
 <?php
-include '../model/db_init.php';
+include '../models/db_init.php';
+include '../model/leave_application.php';
 
 $empId = "";
 $empName = "";
@@ -39,22 +40,6 @@ if (isset($_POST["Submit"])) {
     if (empty($_POST["reason"])) {
         $reason = "Please provide a reason for leave";
         $error = 1;
-    }
-
-    if ($error == 0) {
-        
-        $conn = $mydb->createConObject();  
-        $table = "";  //needs to be filled
-
-        $result = $mydb->leaveForm($conn,$table,$_POST["emp_Id"],$_POST["emp_name"],$_POST["leave_type"],$_POST["leave_from"],$_POST["leave_to"],$_POST["reason"]);
-
-        if (!$result) {
-            echo "Failed.";
-        } 
-
-        $mydb->closeCon($conn); 
-    } else {
-        echo "**Please fill up the required fields**";
     }
 }
 ?>
